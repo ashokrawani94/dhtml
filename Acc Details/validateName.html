@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Name</title>
+    <style>
+        li{
+            list-style: none;
+        }
+        .formContainer{
+            border:1px solid;
+        }
+        ul{
+            width:500px;
+            margin:10px;
+            padding:10px;
+        }
+        p{
+            text-align: center;
+            font-weight: 20px;
+            color:blue;
+        }
+        .pwdValidator ul {
+            position:absolute;
+            top: -9px;
+            left:280px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h3>Validation Name</h3>
+    <ul class="formContainer">
+        <p>Validate Name</p>
+        <li>ENTER NAME: <input type="text" onkeypress="return validateAcctName(event)" maxlength="">
+            <span>* NO space</span>
+        </li>
+    </ul>
+    <ul class="formContainer">
+        <p>Validate Acc Number</p>
+        <li>ENTER ACC NUMBER: <input type="text" onkeypress="return validateAcctNumber(event)" maxlength="10">
+            <span>*Only Number Max length 10</span>
+        </li>
+    </ul>
+    <ul class="formContainer">
+        <p>Validate Acc Password</p>
+        <li>ENTER PASSWORD: <input type="text" onkeypress="return validatePassword(event)" maxlength="8">
+        </li>
+        <ul class="pwdValidator">
+            <li class="countChar">max length of 8 character</li>
+            <li class="firstcharUpper">first letter should be Upper Case</li>
+            <li>minimum 3 character</li>
+            <li>minimum 2 symbol</li>
+            <li>should have one number</li>
+            <li>no end with number</li>
+        </ul>
+    </ul>
+    <script>
+        var validateAcctName = (event) => {
+            if(event.keyCode >= 65 && event.keyCode <=90 || event.keyCode >= 97 && event.keyCode <=122){
+                return true;
+            }else{
+                return false;
+            }
+        }; 
+
+        var validateAcctNumber = (event) => {
+            if(event.keyCode >= 47 && event.keyCode <= 57){
+               return true;
+            }else{
+               return false;
+             }
+        }; 
+
+        var validatePassword = (event) =>{
+            var userValue = event.target.value;
+            var charCode = userValue.charCodeAt(0);
+            if(event.target.value.length ==1 && (charCode >= 65 && charCode <= 90)){
+                document.querySelector(".firstcharUpper").style.color = 'green'
+            }else{
+                document.querySelector(".firstcharUpper").style.color = 'red'
+            }
+
+            if(event.target.value.length == 8){
+               document.querySelector('.countChar').style.color = "green";
+            }else{
+              document.querySelector('.countChar').style.color = "red";
+            }
+
+            if(event.target.char.value.length >= 3){
+               document.querySelector('.countChar').style.color = "green";
+            }else{
+              document.querySelector('.countChar').style.color = "red";
+              
+             }
+
+        };
+    </script>
+</body>
+</html>

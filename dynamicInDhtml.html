@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Demonstrating Dynamic dhtml</title>
+    </head>
+    <body>
+        <h2>Demonstrating Dynamic dhtm creation</h2>
+        <div id="container">
+
+        </div>
+       
+        <script>
+            var elementName = prompt("enter which tag u want to Create");
+            var msg = prompt("enter what msg u want to show");
+            var spanElement = document.createElement(elementName);
+            spanElement.innerHTML = msg;
+            var whatId = prompt("enter what Id u wanted");
+            // spanElement.setAttribute('id','whatId');
+            spanElement.setAttribute('class','whatId');
+            console.log(spanElement);
+            document.querySelector("container").append(spanElement);
+        </script>
+    </body>
+</html>

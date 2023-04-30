@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Demonstrating dhtml</title>
+    </head>
+    <body>
+        <h2>Demonstrating dhtm</h2>
+        <div id="container">
+
+        </div>
+       
+        <script>
+            var msg = 'Welocome to Dhtm Language';
+            var spanElement = document.createElement('span');
+            spanElement.innerHTML = msg;
+            spanElement.setAttribute('id','test');
+            // spanElement.setAttribute('class','sample');
+            // spanElement.setAttribute('sn','abc');
+            spanElement.style.color = 'red';
+            spanElement.style.border = '2px solid';
+            spanElement.style.background = 'yellow';
+            // console.log(spanElement);
+            document.querySelector("#container").append(spanElement);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>starting DHTM concept</title>
+    </head>
+    <body>
+        <div>
+            The Sum is <span id="rblock"></span>
+            <!-- The Sum is <span class="rblock"></span> -->
+            <!-- The Sum is <span>rblock</span> -->
+        </div>
+        <script>
+            var a1 = 90;
+            var a2 = 99;
+            var results = a1 + a2;
+            // console.log("the sum is "+ results);
+            // console.log(window);
+
+            // document.getElementById("rblock").innerHTML = results;
+            // document.getElementByClassname(".rblock").innerHTML = results;
+            // document.getElementByTagName("rblock").innerHTML = results;
+
+            document.querySelector("#rblock").innerHTML=results;
+            // document.querySelector(".rblock").innerHTML=results;
+            // document.querySelector("span").innerHTML=results;
+        </script>
+    </body>
+</html>

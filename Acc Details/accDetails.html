@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>account_details</title>
+    <link rel="stylesheet" href="accDetails.css">
+    <script src="accDetails.js"></script>
+</head>
+<body>
+    <h3>
+        Account Information
+    </h3>
+    <ul class="formContainer">
+        <li>
+            Account Holder Name: <input type="text" onkeypress="return validateAcctName(event)">
+            <span id="accId">*Only Characters Allow without space</span>
+        </li>
+        <li>
+            Account Number: <input type="text" onkeypress="return validateAcctNumber(event)" maxlength="10">
+            <!-- <span id="accId">*Only Char</span> -->
+        </li>
+        <li>
+            Account Password: <input type="text" id = "accountPassword" onkeypress="return validateUserInput(event)">
+        </li>
+        <li>
+            Confirm Account Password: <input type="text" id = "accountPassword" onkeypress="return validateUserInput(event)">
+        </li>
+        <li>
+            <input type="button" value="Submit">
+        </li>
+    </ul>
+
+    <div class="passwordValidator">
+        <p class="firstLetterUpper">First Letter is Upper Case</p>
+        <p class="threeCharacter">Min 3 char should be there</p>
+        <p class="twoSymbol">Min 2 Symbol should be there</p>
+        <p class="oneNumber">Should Have one number</p>
+        <p class="endNumber">Should not end with number</p>
+        <p class="countChar">Minimum Eight Character</p>
+    </div>
+    
+</body>
+</html>
